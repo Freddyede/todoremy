@@ -73,11 +73,14 @@
         "symfony/polyfill-php82": "*"
     },
     "scripts": {
+        "createController": "php bin/console make:controller",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
             "importmap:install": "symfony-cmd"
         },
+        "createDatabaseRunner": "php bin/console doctrine:database:create",
+        "databaseEntityRunner": "php bin/console make:migration && php bin/console d:m:m --dry-run",
         "post-install-cmd": [
             "@auto-scripts"
         ],
